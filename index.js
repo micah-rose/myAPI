@@ -1,0 +1,1 @@
+//Index JS file for following along with course on how to build a RESTful API.
