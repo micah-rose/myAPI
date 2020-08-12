@@ -70,3 +70,11 @@ const deleteCountry = (request, response) => {
         }
     )
 }
+
+module.exports = {
+    getCountries,
+    getCountryById,
+    createCountry,
+    updateCountry,
+    deleteCountry
+}
