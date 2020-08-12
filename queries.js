@@ -30,7 +30,7 @@ const getCountryById = (request, response) => {
 
 const createCountry = (request, response) => {
     const {name, capital} = request.body;
-    pool.query('INSERT INTO countries (name, capital) VALUES ($1, $2', 
+    pool.query('INSERT INTO countries (name, capital) VALUES ($1, $2)', 
         [name, capital], 
         (error, results) => {
             if (error) {
