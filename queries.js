@@ -36,6 +36,22 @@ const createCountry = (request, response) => {
             if (error) {
                 throw error
             }
-            response.status(201).send('A new countrie has been added to the database');
+            response.status(201).send('A new country has been added to the database');
     })
+}
+
+const updateCountry = (request, response) => {
+    const id = parseInt(request.params.id);
+    const {name, capital} = request.body;
+
+    pool.query(
+        'UPDATE countries SET name = $1, capital = $2 WHERE id = $3',
+        [name, capital, id],
+        (error, results) => {
+            if (error){
+                throw error
+            }
+            response.status(200).send('Country has been updated in the database');
+        }
+    )
 }
